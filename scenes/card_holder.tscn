@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgv3qabf6gs74"]
+
+[ext_resource type="Script" path="res://addons/godot_card_layout/layouts/hand_layout/gcard_hand_layout.gd" id="1_ks2jo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qqfej"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GCardHandLayout" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ks2jo")
+
+[node name="card" type="TextureRect" parent="GCardHandLayout"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 0
+offset_left = -78.2172
+offset_top = 6.15582
+offset_right = 1.78277
+offset_bottom = 106.156
+rotation = -0.15708
+pivot_offset = Vector2(40, 0)
+texture = SubResource("PlaceholderTexture2D_qqfej")
+expand_mode = 1
+
+[node name="card2" type="TextureRect" parent="GCardHandLayout"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 0
+offset_left = -39.2295
+offset_top = 1.54132
+offset_right = 40.7705
+offset_bottom = 101.541
+rotation = -0.0785398
+pivot_offset = Vector2(40, 0)
+texture = SubResource("PlaceholderTexture2D_qqfej")
+expand_mode = 1
+
+[node name="card3" type="TextureRect" parent="GCardHandLayout"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 100.0
+pivot_offset = Vector2(40, 0)
+texture = SubResource("PlaceholderTexture2D_qqfej")
+expand_mode = 1
+
+[node name="card4" type="TextureRect" parent="GCardHandLayout"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 0
+offset_left = 39.2295
+offset_top = 1.54132
+offset_right = 119.23
+offset_bottom = 101.541
+rotation = 0.0785398
+pivot_offset = Vector2(40, 0)
+texture = SubResource("PlaceholderTexture2D_qqfej")
+expand_mode = 1
+
+[node name="card5" type="TextureRect" parent="GCardHandLayout"]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 0
+offset_left = 78.2172
+offset_top = 6.15582
+offset_right = 158.217
+offset_bottom = 106.156
+rotation = 0.15708
+pivot_offset = Vector2(40, 0)
+texture = SubResource("PlaceholderTexture2D_qqfej")
+expand_mode = 1

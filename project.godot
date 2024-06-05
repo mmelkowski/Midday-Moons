@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GodotGameTemplate"
+config/name="Midday Moons"
 run/main_scene="res://Menus/start_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -30,7 +30,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/godot_card_layout/plugin.cfg")
 
 [filesystem]
 

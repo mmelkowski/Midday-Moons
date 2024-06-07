@@ -66,7 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_zoom_direction = -1
 	if event.is_action_pressed("camera_zoom_out"):
 		_zoom_direction = 1
-		
+	"""
 	# test if we are rotating
 	if event.is_action_pressed("camera_pan"):
 		_is_panning = true
@@ -75,6 +75,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("camera_pan"): 
 		_is_panning = false
 		_last_drag_point = position
+	"""
 
 #####################
 # MOVEMENT FUNCTIONS
@@ -102,6 +103,7 @@ func _move(delta: float) -> void:
 		Vector3(float(camera_bounds_margin),float(max_zoom),float(camera_bounds_margin))
 		)
 
+
 func _rotate(delta: float) -> void:
 	if !_is_rotating || !allow_rotation:
 		return 
@@ -111,7 +113,8 @@ func _rotate(delta: float) -> void:
 	_rotate_left_right(delta, displacement.x)
 	# use the vertical displacement to elevate
 	_elevate(delta, displacement.y)
-	
+
+
 func _edge_move(delta: float) -> void:
 	# initialize a velocity vector
 	var velocity = Vector3()
@@ -146,7 +149,8 @@ func _edge_move(delta: float) -> void:
 		)
 	global_translate(velocity.rotated(Vector3(0,1,0), rotation.y))
 
-func _pan(delta: float) -> void:
+
+func _pan(_delta: float) -> void:
 	if !_is_panning || !allow_pan:
 		return
 	# get the mouse displacement

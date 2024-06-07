@@ -4,6 +4,8 @@
 
 [node name="Camera_controller" type="Node3D" groups=["camera_controller"]]
 script = ExtResource("1_e4ecb")
+rotation_speed = 15.0
+edge_speed = 2.0
 
 [node name="Elevation" type="Node3D" parent="."]
 

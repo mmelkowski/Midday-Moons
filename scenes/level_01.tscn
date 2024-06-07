@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4y5h7vs1542g"]
 
 [ext_resource type="PackedScene" uid="uid://b53ewxff3ht60" path="res://assets/city/3d models/cars/car_Group_001.fbx" id="1_imtuh"]
-[ext_resource type="PackedScene" uid="uid://cdp5bsagrvxnm" path="res://scenes/camera.tscn" id="1_ownst"]
+[ext_resource type="PackedScene" uid="uid://b23htgnj627vv" path="res://scenes/camera.tscn" id="2_pgysl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qgiu"]
 albedo_color = Color(0.389287, 0.389287, 0.389287, 1)
@@ -11,9 +11,6 @@ material = SubResource("StandardMaterial3D_6qgiu")
 size = Vector3(20, 0, 20)
 
 [node name="level01" type="Node3D"]
-
-[node name="Node3D" parent="." instance=ExtResource("1_ownst")]
-transform = Transform3D(1, 0, 0, 0, 0.906897, 0.421352, 0, -0.421352, 0.906897, 0, 1.09883, 1.59973)
 
 [node name="environment" type="Node" parent="."]
 
@@ -25,5 +22,13 @@ mesh = SubResource("BoxMesh_dtmhs")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="environment"]
 transform = Transform3D(1, 0, 0, 0, 0.794478, 0.607293, 0, -0.607293, 0.794478, 0, 4.55084, 3.2256)
 
-[node name="Root Scene" parent="." instance=ExtResource("1_imtuh")]
+[node name="car" parent="environment" instance=ExtResource("1_imtuh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.448798, 0.226313, -1.73745)
+
+[node name="Camera_controller" parent="." instance=ExtResource("2_pgysl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38872, 1.73998)
+
+[node name="Camera3D" parent="Camera_controller/Elevation" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
+
+[editable path="Camera_controller"]

@@ -71,12 +71,18 @@ func _process(delta):
 # Updates camera movement
 func _update_movement(delta):
 	# Computes desired direction from key states
+	"""
 	_direction = Vector3(
 		(_d as float) - (_a as float), 
 		(_e as float) - (_q as float),
 		(_s as float) - (_w as float)
 	)
-	
+	"""
+	_direction = Vector3(
+		(_d as float) - (_a as float), 
+		(_e as float) - (_q as float),
+		(_s as float) - (_w as float)
+	)
 	# Computes the change in velocity due to desired direction and "drag"
 	# The "drag" is a constant acceleration on the camera to bring it's velocity to 0
 	var offset = _direction.normalized() * _acceleration * _vel_multiplier * delta \

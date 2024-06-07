@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdp5bsagrvxnm"]
+
+[ext_resource type="Script" path="res://scripts/rts_controller.gd" id="1_v6rrw"]
+
+[node name="RTS_controller" type="Node3D" groups=["camera_controller"]]
+script = ExtResource("1_v6rrw")
+
+[node name="Elevation" type="Node3D" parent="."]
+
+[node name="MainCamera" type="Camera3D" parent="Elevation"]

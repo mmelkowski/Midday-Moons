@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdp5bsagrvxnm"]
+[gd_scene load_steps=2 format=3 uid="uid://b23htgnj627vv"]
 
-[ext_resource type="Script" path="res://scripts/camera.gd" id="1_cjouy"]
+[ext_resource type="Script" path="res://scripts/camera2.gd" id="1_e4ecb"]
 
-[node name="Node3D" type="Camera3D"]
+[node name="Camera_controller" type="Node3D" groups=["camera_controller"]]
+script = ExtResource("1_e4ecb")
 
-[node name="FreeLookCamera" type="Camera3D" parent="."]
-script = ExtResource("1_cjouy")
+[node name="Elevation" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Elevation"]

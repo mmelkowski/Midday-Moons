@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd4kvu653uvtn"]
+[gd_scene load_steps=6 format=3 uid="uid://bd4kvu653uvtn"]
+
+[ext_resource type="PackedScene" uid="uid://ckmuo8gxsg2p6" path="res://scenes/healthbar_red.tscn" id="1_dvuj1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c3mvt"]
 
@@ -7,6 +9,9 @@ albedo_color = Color(0.560784, 0.0156863, 0.0745098, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qiurp"]
 material = SubResource("StandardMaterial3D_p5uwn")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_skdij"]
+viewport_path = NodePath("SubViewport")
 
 [node name="vilain" type="StaticBody3D"]
 
@@ -17,3 +22,6 @@ shape = SubResource("CapsuleShape3D_c3mvt")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_qiurp")
+
+[node name="healthbar" parent="." instance=ExtResource("1_dvuj1")]
+texture = SubResource("ViewportTexture_skdij")

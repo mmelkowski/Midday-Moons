@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd8khitp7r3qa"]
+[gd_scene load_steps=7 format=3 uid="uid://bd8khitp7r3qa"]
 
 [ext_resource type="Script" path="res://scripts/hero.gd" id="1_yf0lx"]
+[ext_resource type="PackedScene" uid="uid://bhvxngi5beb0b" path="res://scenes/healthbar_green.tscn" id="2_bre3u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c3mvt"]
 
@@ -9,6 +10,9 @@ albedo_color = Color(0, 0.478265, 0.478363, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qiurp"]
 material = SubResource("StandardMaterial3D_27hog")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yjt3n"]
+viewport_path = NodePath("SubViewport")
 
 [node name="hero" type="StaticBody3D"]
 script = ExtResource("1_yf0lx")
@@ -20,3 +24,6 @@ shape = SubResource("CapsuleShape3D_c3mvt")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_qiurp")
+
+[node name="healthbar" parent="." instance=ExtResource("2_bre3u")]
+texture = SubResource("ViewportTexture_yjt3n")
